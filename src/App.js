@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './index.css';
 
-function App() {
+
+import Header from './components/Header'
+import About from './components/About'
+import CurrentMood from './components/CurrentMood';
+import RecentWork from './components/RecentWork';
+import WebDev from './components/WebDev';
+import WorkWithMe from './components/WorkWithMe';
+import Interests from './components/Interests';
+import Footer from './components/Footer';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+  Link
+} from "react-router-dom";
+
+
+
+
+class App extends Component {
+
+
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    
+    <Routes>
+        <Route exact path="/" element={<div className='blkBackgroundScreen'><Header /><About /><CurrentMood /><RecentWork /><WebDev /><WorkWithMe /><Footer /></div>} />
+       
+       
+        {/* <Route exact path="/about">
+          <HeaderWhite />
+          <Home />
+        </Route> */}
+       
+    </Routes>  
+
+    
+
+    </Router>
   );
+}
 }
 
 export default App;
